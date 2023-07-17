@@ -1,10 +1,13 @@
-import pygame
-from pygame import display,surface,image,event
+import time
+from time import sleep
+import model,view,controller
 
-window=display.set_mode([700,700])
-village=image.load("resources/village.jpg")
 
 while True:
-    event.get()
-    window.blit(village,[0,0])
-    display.flip()
+    sleep(1 / 60)
+    controller.process_events()
+    model.run()
+    view.draw_screen()
+
+
+
